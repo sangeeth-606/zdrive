@@ -22,6 +22,7 @@
   "dependencies": {
     "@libsql/client": "^0.14.0",
     "@radix-ui/react-slot": "^1.2.3",
+    "@singlestore/client": "^0.0.44",
     "@t3-oss/env-nextjs": "^0.12.0",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
