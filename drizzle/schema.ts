@@ -1,4 +1,5 @@
-import { singlestoreTable, singlestoreSchema, AnySingleStoreColumn, primaryKey, bigint, text } from "drizzle-orm/singlestore-core"
+import { singlestoreTable, singlestoreSchema, primaryKey, bigint, text } from "drizzle-orm/singlestore-core"
+import type { AnySingleStoreColumn } from "drizzle-orm/singlestore-core"
 import { sql } from "drizzle-orm"
 
 export const zdriveTutorialFilesTable = singlestoreTable("zdrive_tutorial_files_table", {
