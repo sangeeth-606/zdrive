@@ -1,4 +1,4 @@
-# zDrive 🚀
+# zDrive 
 
 > ⚠️ **Development Status**: This project is currently in active development. Features may be incomplete and breaking changes are expected. Not recommended for production use yet.
 
