@@ -7,15 +7,13 @@ type DBFolder = typeof folders_table.$inferSelect;
 
 interface FileRowProps {
   file: DBFile;
-  handleFolderClick: (id: number) => void;
 }
 
 interface FolderRowProps {
   folder: DBFolder;
-  handleFolderClick: (id: number) => void;
 }
 
-export function FileRow({ file, handleFolderClick }: FileRowProps) {
+export function FileRow({ file }: FileRowProps) {
   const formatFileSize = (bytes: number) => {
     if (bytes === 0) return "0 Bytes";
     const k = 1024;
@@ -25,11 +23,11 @@ export function FileRow({ file, handleFolderClick }: FileRowProps) {
   };
 
   return (
-    <li key={file.id} className="px-6 py-4 border-b border-gray-700 hover:bg-gray-750">
+    <li key={file.id} className="px-6 py-4 border-b border-gray-700 hover:bg-gray-750 transition-colors">
       <div className="grid grid-cols-12 gap-4 items-center">
         <div className="col-span-6 flex items-center">
-          <Link href={file.url ?? "#"} className="flex items-center text-gray-100 hover:text-blue-400">
-            <FileIcon className="mr-3" size={20} />
+          <Link href={file.url ?? "#"} className="flex items-center text-gray-100 hover:text-blue-400 transition-colors">
+            <FileIcon className="mr-3 text-blue-400" size={20} />
             {file.name}
           </Link>
         </div>
@@ -40,18 +38,18 @@ export function FileRow({ file, handleFolderClick }: FileRowProps) {
   );
 }
 
-export function FolderRow({ folder, handleFolderClick }: FolderRowProps) {
+export function FolderRow({ folder }: FolderRowProps) {
   return (
-    <li key={folder.id} className="px-6 py-4 border-b border-gray-700 hover:bg-gray-750">
+    <li key={folder.id} className="px-6 py-4 border-b border-gray-700 hover:bg-gray-750 transition-colors">
       <div className="grid grid-cols-12 gap-4 items-center">
         <div className="col-span-6 flex items-center">
-          <button
-            onClick={() => handleFolderClick(folder.id)}
-            className="flex items-center text-gray-100 hover:text-blue-400"
+          <Link
+            href={`/f/${folder.id}`}
+            className="flex items-center text-gray-100 hover:text-blue-400 transition-colors"
           >
-            <Folder className="mr-3" size={20} />
+            <Folder className="mr-3 text-yellow-400" size={20} />
             {folder.name}
-          </button>
+          </Link>
         </div>
         <div className="col-span-3 text-gray-400">Folder</div>
         <div className="col-span-3 text-gray-400">--</div>

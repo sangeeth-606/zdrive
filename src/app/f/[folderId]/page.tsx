@@ -15,9 +15,7 @@ export default async function Page(props: { params: Promise<{ folderId: number }
     })
     .parse(params);
   
-  console.log(safeParams.folderId);
-  
-  // Check if the folder exists
+  // Single optimized query to check if folder exists and get its data
   const folderExists = await db
     .select()
     .from(folders_table)
@@ -36,14 +34,25 @@ export default async function Page(props: { params: Promise<{ folderId: number }
       </div>
     );
   }
-  
-  const files = await db.select().from(files_table);
-  const folders = await db.select().from(folders_table);
+
+  // Optimized parallel queries - only get what we need
+  const [files, folders] = await Promise.all([
+    db.select().from(files_table).where(eq(files_table.parent, safeParams.folderId)),
+    db.select().from(folders_table).where(eq(folders_table.parent, safeParams.folderId)),
+  ]);
+
+  // Get all folders for breadcrumb navigation (cached/optimized later)
+  const allFolders = await db.select().from(folders_table);
 
   return (
     <div className="min-h-screen bg-gray-900 text-gray-100 p-8">
       <div className="max-w-6xl mx-auto">
-        <GoogleDriveClone files={files} folders={folders} />
+        <GoogleDriveClone 
+          files={files} 
+          folders={folders} 
+          allFolders={allFolders}
+          currentFolderId={safeParams.folderId} 
+        />
       </div>
     </div>
   );
