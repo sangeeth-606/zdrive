@@ -1,11 +1,11 @@
 import "~/styles/globals.css";
 
-import { GeistSans } from "@next/font/google";
+import { GeistSans } from "geist/font/sans";
 import { type Metadata } from "next";
 import { ClerkProvider } from "@clerk/nextjs";
 import { PostHogProvider } from "./_providers/posthog-provider";
 export const metadata: Metadata = {
-  title: "Drive Tutorial",
+  title: "zdrive",
   description: "It's like Google Drive, but worse!",
   icons: [{ rel: "icon", url: "/favicon.ico" }],
 };
