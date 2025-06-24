@@ -6,8 +6,7 @@ import { ClerkProvider } from "@clerk/nextjs";
 import { PostHogProvider } from "./_providers/posthog-provider";
 export const metadata: Metadata = {
   title: "zdrive",
-  description: "It's like Google Drive, but worse!",
-  icons: [{ rel: "icon", url: "/favicon.ico" }],
+  description: "Your files, always within reach.",
 };
 
 export default function RootLayout({
