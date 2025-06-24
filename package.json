@@ -20,19 +20,24 @@
     "typecheck": "tsc --noEmit"
   },
   "dependencies": {
+    "@clerk/nextjs": "^6.23.0",
     "@libsql/client": "^0.14.0",
     "@radix-ui/react-slot": "^1.2.3",
     "@singlestore/client": "^0.0.44",
     "@t3-oss/env-nextjs": "^0.12.0",
+    "@uploadthing/react": "^7.3.2",
     "class-variance-authority": "^0.7.1",
     "clsx": "^2.1.1",
     "drizzle-orm": "^0.41.0",
+    "geist": "^1.4.2",
     "lucide-react": "^0.519.0",
     "mysql2": "^3.14.1",
     "next": "^15.2.3",
+    "posthog-js": "^1.255.1",
     "react": "^19.0.0",
     "react-dom": "^19.0.0",
     "tailwind-merge": "^3.3.1",
+    "uploadthing": "^7.7.3",
     "zod": "^3.24.2"
   },
   "devDependencies": {
