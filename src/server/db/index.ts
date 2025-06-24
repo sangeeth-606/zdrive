@@ -25,7 +25,7 @@ const conn =
   });
 if (env.NODE_ENV !== "production") globalForDb.conn = conn;
 
-conn.addListener("error", (err: Error) => {
+conn.addListener("error", (err) => {
   console.error("Database connection error:", err);
 });
 
