@@ -129,30 +129,7 @@ A modern, full-stack cloud storage application built with Next.js 15, featuring 
 | `pnpm db:push` | Push schema to database |
 | `pnpm db:studio` | Open Drizzle Studio for database management |
 
-## 🏗️ Project Structure
 
-```
-zdrive/
-├── src/
-│   ├── app/                    # Next.js App Router pages
-│   │   ├── (home)/            # Home route group
-│   │   │   ├── drive/         # Main drive interface
-│   │   │   └── sign-in/       # Authentication pages
-│   │   ├── api/               # API routes
-│   │   │   └── uploadthing/   # File upload endpoints
-│   │   ├── f/[folderId]/      # Dynamic folder routes
-│   │   └── _providers/        # React context providers
-│   ├── components/            # Reusable UI components
-│   │   └── ui/               # Base UI components
-│   ├── lib/                  # Utility functions and configurations
-│   ├── server/               # Server-side code
-│   │   ├── actions.ts        # Server actions
-│   │   └── db/              # Database layer
-│   └── styles/              # Global styles
-├── drizzle/                 # Database migrations and schema
-├── public/                  # Static assets
-└── scripts/                # Utility scripts
-```
 
 ## 🗄️ Database Schema
 
