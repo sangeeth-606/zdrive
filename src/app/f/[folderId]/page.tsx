@@ -51,7 +51,7 @@ export default async function GoogleDriveClone(props: {
             </h1>
             
             <p className="mx-auto mb-8 max-w-md text-lg text-red-200/80 md:text-xl">
-              You don't have permission to view this folder.
+              You don&apos;t have permission to view this folder.
             </p>
             
             <a 

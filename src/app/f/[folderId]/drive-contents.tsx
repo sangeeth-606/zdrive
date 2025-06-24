@@ -1,6 +1,6 @@
 "use client";
 
-import { Upload, ChevronRight, Plus, FolderPlus } from "lucide-react";
+import { ChevronRight, FolderPlus } from "lucide-react";
 import { FileRow, FolderRow } from "./file-row";
 import type { files_table, folders_table } from "~/server/db/schema";
 import Link from "next/link";
@@ -43,7 +43,7 @@ export default function DriveContents(props: {
             <Link href="/f/1" className="mr-2 text-indigo-200/80 hover:text-indigo-100 transition-colors">
               My Drive
             </Link>
-            {props.parents.map((folder, index) => (
+            {props.parents.map((folder, _index) => (
               <div key={folder.id} className="flex items-center">
                 <ChevronRight className="mx-2 text-indigo-300/50" size={16} />
                 <Link
@@ -83,7 +83,7 @@ export default function DriveContents(props: {
                 placeholder="Folder name"
                 className="px-3 py-2 bg-neutral-800/50 border border-indigo-500/30 text-white rounded backdrop-blur-sm focus:outline-none focus:border-indigo-400/50"
                 onKeyDown={(e) => {
-                  if (e.key === "Enter") handleCreateFolder();
+                  if (e.key === "Enter") void handleCreateFolder();
                   if (e.key === "Escape") {
                     setIsCreatingFolder(false);
                     setNewFolderName("");

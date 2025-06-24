@@ -20,7 +20,7 @@ export default async function DrivePage() {
         </h1>
         
         <p className="mx-auto mb-8 max-w-md text-lg text-indigo-200/80 md:text-xl">
-          Let's create your personal cloud storage space.
+          Let&apos;s create your personal cloud storage space.
         </p>
         
         <form
